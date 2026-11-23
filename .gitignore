@@ -16,6 +16,9 @@ server/data/
 .env.*
 !.env.example
 
+# Notes privées pour Claude Code (le CLAUDE.md public, lui, est versionné)
+CLAUDE.local.md
+
 # Journaux
 *.log
 npm-debug.log*
