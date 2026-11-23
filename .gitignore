@@ -1,0 +1,28 @@
+# Dépendances (réinstallées avec `npm install`)
+node_modules/
+
+# Build de production (régénéré par `npm run build`)
+dist/
+
+# Données locales : base SQLite avec mes annonces et candidatures (privées)
+server/data/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Variables d'environnement et secrets (clés d'API futures)
+.env
+.env.*
+!.env.example
+
+# Journaux
+*.log
+npm-debug.log*
+
+# Éditeur et système
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+Thumbs.db
+desktop.ini

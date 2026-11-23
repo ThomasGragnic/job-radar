@@ -1,0 +1,2 @@
+# Fins de ligne LF dans le dépôt et sur le disque, quel que soit le réglage core.autocrlf de la machine
+* text=auto eol=lf
