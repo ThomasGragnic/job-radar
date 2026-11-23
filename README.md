@@ -59,3 +59,7 @@ Les flux sont récupérés **par le serveur** et non par le navigateur : la plup
 - Node.js 24 ou plus récent
 
 Les instructions d'installation et de lancement arriveront avec les premières étapes.
+
+## Licence
+
+Code distribué sous [licence MIT](LICENSE).
