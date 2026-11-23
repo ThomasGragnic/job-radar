@@ -37,7 +37,7 @@ Les flux sont récupérés **par le serveur** et non par le navigateur : la plup
 ### MVP
 
 - [x] **0.** Initialisation du dépôt
-- [ ] **1.** Serveur minimal (Express + TypeScript)
+- [x] **1.** Serveur minimal (Express + TypeScript)
 - [ ] **2.** Lecture et normalisation d'un flux RSS
 - [ ] **3.** Persistance SQLite, sans doublons
 - [ ] **4.** API REST : flux et annonces
@@ -58,7 +58,20 @@ Les flux sont récupérés **par le serveur** et non par le navigateur : la plup
 
 - Node.js 24 ou plus récent
 
-Les instructions d'installation et de lancement arriveront avec les premières étapes.
+## Lancer le projet
+
+Pour l'instant, seul le serveur existe :
+
+```bash
+cd server
+npm install        # installe les dépendances
+npm run dev        # démarre le serveur et le relance à chaque modification
+npm run typecheck  # vérifie les types TypeScript
+```
+
+Le serveur répond sur http://localhost:3000/api/health.
+
+Node exécute directement les fichiers `.ts` en effaçant les annotations de type : il n'y a pas d'étape de compilation. La vérification des types est assurée séparément par `tsc --noEmit`.
 
 ## Licence
 

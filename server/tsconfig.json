@@ -1,0 +1,47 @@
+// Configuration TypeScript du serveur.
+// Ici, TypeScript sert uniquement à VÉRIFIER le code (`npm run typecheck`) :
+// c'est Node qui exécute directement les fichiers .ts en effaçant les types.
+{
+  "compilerOptions": {
+    // --- Rôle de tsc : vérifier, jamais produire de fichiers ---
+
+    // Aucun fichier .js n'est généré : Node lit les .ts lui-même.
+    "noEmit": true,
+
+    // Autorise `import ... from './db.ts'` : Node exige l'extension réelle du fichier.
+    "allowImportingTsExtensions": true,
+
+    // --- Compatibilité avec le « type stripping » de Node ---
+
+    // Interdit la syntaxe TypeScript qui génère du JavaScript (enum, namespace…),
+    // que Node ne sait pas effacer. On utilisera des unions de chaînes à la place.
+    "erasableSyntaxOnly": true,
+
+    // Oblige à écrire `import type { X }` quand X ne sert qu'au typage,
+    // pour que Node sache qu'il peut supprimer l'import entier.
+    "verbatimModuleSyntax": true,
+
+    // --- Environnement cible ---
+
+    // Modules ES gérés comme le fait Node (respecte "type": "module" du package.json).
+    "module": "nodenext",
+
+    // Pas de conversion vers du vieux JavaScript : Node 24 comprend la syntaxe récente.
+    "target": "esnext",
+
+    // Types de Node (process, Buffer, modules node:*) fournis par @types/node.
+    "types": ["node"],
+
+    // --- Rigueur ---
+
+    // Toutes les vérifications strictes : null/undefined, any implicite, etc.
+    "strict": true,
+
+    // `tableau[i]` est typé « valeur OU undefined » : oblige à gérer la case vide.
+    "noUncheckedIndexedAccess": true,
+
+    // Ne vérifie pas les fichiers de types des bibliothèques (plus rapide, et pas notre code).
+    "skipLibCheck": true
+  },
+  "include": ["src"]
+}
